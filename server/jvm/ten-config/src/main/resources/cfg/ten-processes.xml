@@ -1,0 +1,47 @@
+<!--
+!
+!   System              : Genesis Business Library
+!   Sub-System          : multi-pro-code-test Configuration
+!   Version             : 1.0
+!   Copyright           : (c) Genesis
+!   Date                : 2022-03-18
+!   Function : Provide Process Definitions Config for multi-pro-code-test.
+!
+!   Modification History
+!
+-->
+<processes>
+    <process name="TEN_DATASERVER">
+        <groupId>TEN</groupId>
+        <start>true</start>
+        <options>-Xmx1024m -DXSD_VALIDATE=false</options>
+        <module>genesis-pal-dataserver</module>
+        <package>global.genesis.dataserver.pal</package>
+        <script>ten-dataserver.kts</script>
+        <description>Displays real-time details</description>
+        <language>pal</language>
+        <loggingLevel>DEBUG,DATADUMP_ON</loggingLevel>
+    </process>
+    <process name="TEN_EVENT_HANDLER">
+        <groupId>TEN</groupId>
+        <start>true</start>
+        <options>-Xmx256m -DRedirectStreamsToLog=true -DXSD_VALIDATE=false</options>
+        <module>genesis-pal-eventhandler</module>
+        <package>global.genesis.eventhandler.pal</package>
+        <script>ten-eventhandler.kts</script>
+        <description>Handles events</description>
+        <classpath>ten-messages*,ten-eventhandler*</classpath>
+        <language>pal</language>
+    </process>
+    <process name="TEN_CAMEL">
+        <groupId>TEN</groupId>
+        <start>true</start>
+        <options>-Xmx256m -DRedirectStreamsToLog=true -DXSD_VALIDATE=false</options>
+        <module>genesis-pal-camel</module>
+        <package>global.genesis.pal.camel</package>
+        <script>ten-camel.kts</script>
+        <description>Camel integrations</description>
+        <classpath>ten-messages*,ten-camel-libs*.jar</classpath>
+        <language>pal</language>
+    </process>
+</processes>

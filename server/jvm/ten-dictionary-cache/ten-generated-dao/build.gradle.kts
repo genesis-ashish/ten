@@ -1,0 +1,1 @@
+description = "ten-generated-dao"
