@@ -7,6 +7,7 @@ dependencies {
     implementation("org.apache.camel:camel-management:3.19.0")
     implementation("org.apache.camel:camel-console:3.19.0")
     implementation("org.apache.camel:camel-cli-connector:3.19.0")
+    implementation("org.apache.camel:camel-timer:3.19.0")
     implementation(project(":ten-messages"))
     api("global.genesis:genesis-db")
     compileOnly(project(":ten-config"))

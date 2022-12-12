@@ -38,7 +38,7 @@
         <start>true</start>
         <options>-Xmx256m -DRedirectStreamsToLog=true -DXSD_VALIDATE=false</options>
         <module>genesis-pal-camel</module>
-        <package>global.genesis.pal.camel</package>
+        <package>global.genesis.camel.pal</package>
         <script>ten-camel.kts</script>
         <description>Camel integrations</description>
         <classpath>ten-messages*,ten-camel-libs*.jar</classpath>
